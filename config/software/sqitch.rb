@@ -50,6 +50,8 @@ build do
   # decide whether to use the -XS package or a pure perl
   # implementation.
   env["PERL_MM_OPT"] = "PUREPERL_ONLY=1"
+  command "cpanm Data::OptList"
+  command "cpanm Sub::Exporter"
   command "perl Build.PL", env: env
   command "./Build installdeps --cpan_client 'cpanm -v --notest'", env: env
   command "./Build", env: env
